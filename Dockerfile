@@ -14,6 +14,9 @@ RUN CGO_ENABLED=0 go build \
     -o wings \
     wings.go
 RUN echo "ID=\"distroless\"" > /etc/os-release
+RUN apt-get update && \
+    apt-get install -y docker.io && \
+    rm -rf /var/lib/apt/lists/*
 
 # Stage 2 (Final)
 FROM gcr.io/distroless/static:latest
