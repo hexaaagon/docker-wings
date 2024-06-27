@@ -1,4 +1,5 @@
 # Stage 1 (Build)
+FROM ubuntu:22.04
 FROM golang:1.21.9-alpine AS builder
 
 ARG VERSION
