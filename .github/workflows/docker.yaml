@@ -60,7 +60,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           labels: ${{ steps.docker_meta.outputs.labels }}
           tags: |
-            ghcr.io/hexaaagon/docker-wings:${{ steps.build_info.outputs.version_tag }}
+            ghcr.io/hexaaagon/docker-wings:release
 
       - name: Build and Push (develop)
         uses: docker/build-push-action@v5
@@ -72,4 +72,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           labels: ${{ steps.docker_meta.outputs.labels }} DEVELOP
           tags: |
-            ghcr.io/hexaaagon/docker-wings:develop-${{ steps.build_info.outputs.version_tag }}
+            ghcr.io/hexaaagon/docker-wings:develop
