@@ -61,7 +61,8 @@ jobs:
           build-args: |
             VERSION=${{ steps.build_info.outputs.version_tag }}
           labels: ${{ steps.docker_meta.outputs.labels }}
-          tags: ${{ steps.docker_meta.outputs.tags }}
+          tags: |
+            ghcr.io/hexaaagon/docker-wings:${{ steps.build_info.outputs.version_tag }}
 
       - name: Build and Push (develop)
         uses: docker/build-push-action@v5
